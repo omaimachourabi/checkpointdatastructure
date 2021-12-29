@@ -1,0 +1,39 @@
+ALGORITHM programme2
+VAR
+    set1 : ARRAY_OF INTEGER[100];
+    set2 : ARRAY_OF INTEGER[100];
+    sum : INTEGER ;
+    i,j,nb1,nb2 : INTEGER;
+BEGIN
+    sum := 0;
+    write("saisir la taille de set1:");
+    read(nb1);
+    FOR i FROM 0 TO nb1-1 STEP 1 DO
+       read(set1[i]);
+    END_FOR
+
+
+     write("saisir la taille de set2:");
+    read(nb2);
+    FOR j FROM 0 TO nb2-1 STEP 1 DO
+       read(set2[j]);
+    END_FOR
+
+    FOR i FROM 0 TO set1.length-1 STEP 1 DO
+    FOR j FROM 0 TO set2.length-1 STEP 1  DO
+       IF (set1[i]<>set2[j]) THEN
+          sum := sum + set1[i];
+       END_IF
+       break;
+    END_FOR
+
+     FOR i FROM 0 TO set1.length-1 STEP 1 DO
+    FOR j FROM 0 TO set2.length-1 STEP 1  DO
+       IF (set2[j]<>set1[i]) THEN
+          sum := sum + set2[j];
+       END_IF
+       break;
+    END_FOR
+        write("sum elements :", sum);
+
+END
